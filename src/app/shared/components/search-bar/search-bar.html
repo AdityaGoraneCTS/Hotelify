@@ -1,7 +1,8 @@
 <div class="container mt-4 p-4 bg-light rounded shadow">
     <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="row g-3 align-items-end">
         <div class="col-md-4 position-relative" #locationContainer>
-            <label class="form-label">Location</label>
+            <i class="bi bi-geo-alt-fill me-2 text-blue-700"></i>
+            <label class="form-label"><b>Location</b></label>
             <input type="text" class="form-control" formControlName="location" placeholder="Enter city or hotel"
                 autocomplete="off" />
             <ul class="list-group position-absolute w-100 z-3"
@@ -13,11 +14,13 @@
             </ul>
         </div>
         <div class="col-md-2">
-            <label class="form-label">Check-in</label>
+            <i class="bi bi-calendar-check-fill me-2 ms-1 text-blue-700"></i>
+            <label class="form-label"><b>Check-in</b></label>
             <input type="date" class="form-control" formControlName="checkIn" />
         </div>
         <div class="col-md-2">
-            <label class="form-label">Check-out</label>
+            <i class="bi bi-calendar-x-fill me-2 ms-1 text-blue-700"></i>
+            <label class="form-label"><b>Check-out</b></label>
             <input type="date" class="form-control" formControlName="checkOut" />
             <div *ngIf="searchForm.errors?.['dateMismatch'] && (searchForm.get('checkOut')?.dirty || searchForm.get('checkOut')?.touched)"
                 class="text-danger small mt-1">
@@ -25,7 +28,8 @@
             </div>
         </div>
         <div class="col-md-2 position-relative" #guestsContainer>
-            <label class="form-label">Guests & Rooms</label>
+            <i class="bi bi-people-fill me-2 ms-1 text-blue-700"></i>
+            <label class="form-label"><b>Guests & Rooms</b></label>
             <input type="text" class="form-control" formControlName="guestsRooms" readonly
                 (click)="toggleGuestDropdown()" [value]="guests() + ' guests, ' + rooms() + ' rooms'" />
             <div class="dropdown-menu show w-100 p-3 shadow-sm" *ngIf="isGuestDropdownOpen()"

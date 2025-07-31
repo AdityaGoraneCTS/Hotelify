@@ -116,7 +116,8 @@ export class SearchBarComponent {
       guests: this.guests(),
       rooms: this.rooms()
     };
-    this.router.navigate(['/search-results'], { queryParams });
+    // this.router.navigate(['/search-results'], { queryParams });
+    this.router.navigate(['/hotel-cards'], { queryParams });
   }
 
   @HostListener('document:click', ['$event.target'])
