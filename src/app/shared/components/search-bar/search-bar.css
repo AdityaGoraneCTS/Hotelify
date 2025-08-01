@@ -7,3 +7,25 @@ ul.list-group {
 .dropdown-menu.show {
     display: block;
 }
+
+.my-background-div {
+  background-image: url('https://img.freepik.com/premium-vector/tropical-luxury-resort-hotel-beach-swimming-pool-poolside-seating-area-summer-vacation-concept_48369-46815.jpg');
+  background-size: cover;
+  /* background-color: rgba(255, 255, 255, 0.85); */
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+}
+.inner{
+    background-color:white;
+    border-radius: 10px;
+    height: 184px;
+    padding-top: 50px;
+    padding: 50px 30px 40px 50px;
+     margin: 0 auto;
+     width: 92%;
+}
