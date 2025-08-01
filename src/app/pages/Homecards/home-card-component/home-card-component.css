@@ -1,0 +1,109 @@
+.image-overlay-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 50%);
+  border-radius: 1rem; /* Match the card's new border-radius */
+}
+ 
+ 
+/* Style for section headings like Offers */
+.container h3 {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+}
+ 
+/* Ensure all content is above the blurred background */
+body > *:not(.blurred-background) {
+  position: relative;
+  z-index: 1;
+}
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-container.grabbing {
+  cursor: grabbing;
+  scroll-behavior: auto; /* Disable smooth scroll for instant drag feedback */
+  user-select: none; /* Prevents text selection during drag */
+}
+ 
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+ 
+.arrow-btn {
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+ 
+.card {
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem; /* Increased for a more curved look */
+  overflow: hidden; /* Ensures content (like images) respects the curved borders */
+}
+ 
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.card.no-hover:hover {
+  transform: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+ 
+.discover-card .card-title {
+  color: #fff;
+}
+ 
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+ 
+}
+ 
+.rating-box {
+  background-color: #28a745; /* A pleasant green */
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+ 
+.rating-text {
+  font-weight: 500;
+  color: #000000;
+}
+ 
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+ 
