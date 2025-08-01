@@ -1,4 +1,4 @@
-import { DiscoverCards, PopularCards, TopDealCards, UniqueCards } from './models/home-cards-model';
+import { DiscoverCards, PopularCards, TopDealCards, UniqueCards } from '../models/home-cards-model';
 import { Injectable } from '@angular/core';
  
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestroy,OnInit } from '@angular/core';
 import { DiscoverCards, PopularCards, TopDealCards, UniqueCards } from '../../../core/models/home-cards-model';
-import { CardsService } from '../../../core/home-card-service';
+import { CardsService } from '../../../core/services/home-card-service';
 import { CommonModule } from '@angular/common';
 
 @Component({
