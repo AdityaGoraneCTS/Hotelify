@@ -18,7 +18,8 @@ ul.list-group {
   background-color: #f0f0f0;
   height: 400px;
   width: 100%;
-  margin-top: 20px;
+  margin: 20px auto; /* Adds 20px of space on the top and bottom, and centers the div horizontally */
+  max-width: 94%;
 }
 .inner{
     background-color:white;
