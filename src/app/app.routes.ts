@@ -10,5 +10,7 @@ export const routes: Routes = [
     { path: 'hotel-cards', component: HotelCardComponent },
 
     { path: '', component: SearchBarComponent},
-    { path: 'search-results', component: SearchResultComponent }
+    { path: 'search-results', component: SearchResultComponent },
+
+    { path: 'results', component: SearchResultComponent},
 ];

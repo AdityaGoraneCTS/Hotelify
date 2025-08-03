@@ -2,12 +2,14 @@ export interface DiscoverCards{
     id:number
     title:string
     image:string
+    type?: string;
 }
  
 export interface PopularCards{
     id:number
     title:string
     image:string
+    type?: string;
 }
  
 export interface UniqueCards{
@@ -19,6 +21,7 @@ export interface UniqueCards{
     originalPrice:number
     offerPrice:number
     image:string
+    type?: string;
 }
  
 export interface TopDealCards{
@@ -30,4 +33,5 @@ export interface TopDealCards{
     originalPrice:number
     offerPrice:number
     image:string
+    type?: string;
 }

@@ -1,7 +1,8 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestroy,OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { DiscoverCards, PopularCards, TopDealCards, UniqueCards } from '../../../core/models/home-cards-model';
 import { CardsService } from '../../../core/services/home-card-service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router'; // Import Router
 
 @Component({
   selector: 'app-home-card-component',
@@ -27,7 +28,7 @@ export class HomeCardComponent {
   homesCards: UniqueCards[] = [];
   dealsCards: TopDealCards[] = [];
 
-  constructor(private cardsService: CardsService) { }
+  constructor(private cardsService: CardsService, private router: Router) { }
 
   ngOnInit(): void {
     this.propertyCards = this.cardsService.getDiscoverCards();
@@ -107,9 +108,21 @@ export class HomeCardComponent {
     this.updateArrowVisibility(this.dealsScroll, 'deals');
   }
 
-  goToDetails(id: number) {
-    alert(`Clicked on Card ${id}`);
+  // Use this single method for all card clicks
+  navigateToLocation(location: string, id: number | null = null): void {
+    if (location) {
+      this.router.navigate(['/results'], { queryParams: { location: location } });
+    } else {
+      // Fallback for cases where location is not provided
+      this.router.navigate(['/results']);
+    }
   }
+
+  // The goToDetails method is now obsolete if all cards navigate to the results page
+  // If you still need it, here is a corrected version:
+  // goToDetails(id: number) {
+  //   alert(`Clicked on Card ${id}`);
+  // }
 
   getRatingText(rating: number): string {
     if (rating >= 4.5) {
@@ -124,4 +137,3 @@ export class HomeCardComponent {
     return 'Rated';
   }
 }
-
