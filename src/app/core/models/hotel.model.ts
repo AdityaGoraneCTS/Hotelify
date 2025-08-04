@@ -4,7 +4,7 @@ export interface Hotel {
   location: string;
   city: string;
   features: string[];
-  type?: 'Hotel' | 'Apartment' | 'Villa' | 'Resort' | 'Cottage' | 'Cabin' | 'Guest House' | 'Hostel'; // <-- New property
+  type?: 'Hotel' | 'Apartment' | 'Villa' | 'Resort' | 'Cottage' | 'Cabin' | 'Guest House' | 'Hostel'; 
   isFullyRefundable: boolean;
   isPetFriendly?: boolean;
   hasFreeBreakfast?: boolean;

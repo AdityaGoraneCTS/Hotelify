@@ -21,7 +21,7 @@
       class="arrow-btn position-absolute top-50 start-0 translate-middle-y" (click)="scrollProperty('left')">&#10094;</button>
 
     <div #propertyScroll class="scroll-container d-flex gap-4" (scroll)="updatePropertyArrows()">
-      <div *ngFor="let property of propertyCards" class="card text-white flex-shrink-0 card-snap-item"
+      <div *ngFor="let property of propertyCards" class="card text-white flex-shrink-0 card-snap-item mt-3"
         style="width: 15rem; height: 19rem; cursor: pointer;" (click)="navigateToLocation(property.title)">
         <img [src]="property.image" class="card-img" alt="{{ property.title }}"
           style="height: 100%; object-fit: cover; object-position: center;">
@@ -41,7 +41,7 @@
       (click)="scrollPopular('left')">&#10094;</button>
 
     <div #popularScroll class="scroll-container d-flex gap-4" (scroll)="updatePopularArrows()">
-      <div *ngFor="let popular of cards" class="card flex-shrink-0 card-snap-item"
+      <div *ngFor="let popular of cards" class="card flex-shrink-0 card-snap-item mt-3"
         style="width: 15rem; height: 13rem; cursor: pointer;" (click)="navigateToLocation(popular.title)">
         <img [src]="popular.image" class="card-img-top" alt="{{ popular.title }}">
         <div class="card-body">
@@ -60,7 +60,7 @@
       (click)="scrollHomes('left')">&#10094;</button>
 
     <div #homesScroll class="scroll-container d-flex gap-4" (scroll)="updateHomesArrows()">
-      <div *ngFor="let home of homesCards" class="card flex-shrink-0 card-snap-item"
+      <div *ngFor="let home of homesCards" class="card flex-shrink-0 card-snap-item mt-3"
         style="width: 18rem; height: auto; cursor: pointer;" (click)="navigateToLocation(home.city)">
         <img [src]="home.image" class="card-img-top" alt="{{ home.hotelName }}">
         <div class="card-body">
@@ -91,7 +91,7 @@
       (click)="scrollDeals('left')">&#10094;</button>
 
     <div #dealsScroll class="scroll-container d-flex gap-4" (scroll)="updateDealsArrows()">
-      <div *ngFor="let deal of dealsCards" class="card flex-shrink-0 card-snap-item"
+      <div *ngFor="let deal of dealsCards" class="card flex-shrink-0 card-snap-item mt-3"
         style="width: 18rem; height: auto; cursor: pointer;" (click)="navigateToLocation(deal.city)">
         <img [src]="deal.image" class="card-img-top" alt="{{ deal.hotelName }}">
         <div class="card-body">
