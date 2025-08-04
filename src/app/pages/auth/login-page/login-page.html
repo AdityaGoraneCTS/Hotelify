@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center align-items-center vh-100 bg-white">
+  <div class="card shadow-lg border-0 rounded-4 p-4 form-card-background" style="width: 100%; max-width: 500px;">
+    <div class="overlay bg-white bg-opacity-75 p-4 rounded-4">
+    <h3 class="text-center mb-4 text-primary fw-bold">Welcome Back !</h3>
+
+    <form #loginForm="ngForm">
+      <div class="form-floating mb-3">
+  <input type="email" class="form-control rounded-3" id="email" placeholder="Email address" name="email" [(ngModel)]="email" required>
+  <label for="email" class="d-flex justify-content-between w-100">
+    Email address
+    <i class="bi bi-envelope"></i>
+  </label>
+  </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control rounded-3" id="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+        <label for="password" class="d-flex justify-content-between w-100">
+          Password
+          <i class="bi bi-lock"></i>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-semibold" [disabled]="!loginForm.form.valid">
+        Log In
+      </button>
+    </form>
+
+    <div class="text-center my-3 text-muted">— or —</div>
+
+    <button class="btn btn-outline-secondary w-100 py-2 rounded-pill d-flex align-items-center justify-content-center fw-bold" (click)="signInWithGoogle()">
+      <i class="bi bi-google" style="height:20px; margin-right:8px;"></i>
+      Sign in with Google
+    </button>
+
+    <div class="text-center mt-4">
+      <small>Don’t have an account? <a href="/register" class="text-decoration-none text-primary fw-bold">Register</a></small>
+    </div>
+  </div>
+</div>
+</div>

@@ -35,10 +35,10 @@
 
       <ng-container *ngIf="!(authService.isLoggedIn$ | async); else loggedInButtons">
         <div class="flex items-center space-x-4">
-          <button routerLink="/auth/login" class="px-6 py-2 rounded bg-white text-blue-700 font-bold border-2 border-transparent
+          <button routerLink="/login" class="px-6 py-2 rounded bg-white text-blue-700 font-bold border-2 border-transparent
                    hover:text-blue-800 hover:border-blue-800 transition-all duration-300 ease-in-out
                    focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-300
-                   shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg font-sans me-2">
+                   shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg font-sans me-2" >
             Login
           </button>
           <button routerLink="/auth/register" class="px-6 py-2 rounded bg-blue-500 text-white font-bold border-2 border-blue-500

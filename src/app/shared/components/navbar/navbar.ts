@@ -23,4 +23,5 @@ export class Navbar {
     // You might want to use Router service here:
     // this.router.navigate(['/auth/login']);
   }
-}
+  }
+
