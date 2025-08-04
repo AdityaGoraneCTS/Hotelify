@@ -27,6 +27,7 @@ export interface Hotel {
     rating: number; // 1 to 5 stars
     reviewsCount: number;
     pricePerNight: number;
+    discountedPrice:number;
     currency: string; // e.g. 'INR'
     availableRooms: Room[];
     managerId: string; // hotel admin
