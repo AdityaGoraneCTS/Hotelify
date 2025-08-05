@@ -1,0 +1,87 @@
+/* Custom styles for the registration card */
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Card header background and text */
+.card-header {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  background-size: full;
+}
+
+/* Form input fields */
+.form-control {
+  border-radius: 8px;
+  box-shadow: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  transform: scale(1.02);
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:enabled {
+  background: linear-gradient(to right, #0056b3, #00bfff);
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.5);
+}
+
+/* Container padding and background */
+/* Align form container to the left with more breathing space */
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Optional: Remove right margin to maximize left alignment */
+.row {
+  margin-right: 0;
+}
+
+/* Card styling remains the same or add small tweaks */
+.card {
+  border-radius: 12px;
+}
+.btn-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.form-card-background {
+  background-image: url("C:/Users/2431207/Downloads/pexels-francesco-ungaro-96444.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.icon-inside-input {
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #6c757d;
+  pointer-events: none;
+}
+input.ng-invalid.ng-touched {
+  border-color: #c24f5a; /* Bootstrap red */
+}
