@@ -217,5 +217,7 @@
       "totalPriceIncludesTaxes": 56050,
       "images": ["https://images.trvl-media.com/lodging/4000000/3030000/3021100/3021032/64466ae7.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
     }
-  ]
+  ],
+
+  "profile" : []
 }

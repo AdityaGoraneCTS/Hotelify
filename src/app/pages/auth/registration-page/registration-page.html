@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow form-card-background">
+        <div class="card-header bg-primary text-white text-center fw-bold">
+          <h4>Hotel Booking – Registration</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">Username :-</label>
+              <div class="position-relative mb-1">
+                <input type="text" class="form-control pr-5" formControlName="username">
+                <i class="bi bi-person position-absolute icon-inside-input"></i>
+              </div>
+              <div *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched">
+                <small class="text-danger">Username is Mandatory !</small>
+              </div>
+            </div>
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">First Name :-</label>
+              <div class="position-relative mb-3">
+                <input type="text" class="form-control pr-5" formControlName="firstName">
+              </div>
+            </div>
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">Last Name :-</label>
+              <div class="position-relative mb-3">
+                <input type="text" class="form-control pr-5" formControlName="lastName">
+              </div>
+            </div>
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">Email :-</label>
+              <div class="position-relative mb-3">
+                <input type="email" class="form-control pr-5" formControlName="email">
+                <i class="bi bi-envelope position-absolute icon-inside-input"></i>
+              </div>
+            </div>
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">Phone Number :-</label>
+              <div class="position-relative mb-3">
+                <input type="tel" class="form-control pr-5" formControlName="phone">
+                <i class="bi bi-phone position-absolute icon-inside-input"></i>
+              </div>
+            </div>
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">Password :-</label>
+              <div class="position-relative mb-3">
+                <input type="password" class="form-control pr-5" formControlName="password">
+                <i class="bi bi-lock position-absolute icon-inside-input"></i>
+              </div>
+            </div>
+            <div class="form-group mb-3 fw-bold">
+              <label class="text-white">Confirm Password :-</label>
+              <div class="position-relative mb-1">
+                <input type="password" class="form-control pr-5" formControlName="confirmPassword">
+              </div>
+              <div *ngIf="registerForm.get('confirmPassword')?.hasError('mismatch') && registerForm.get('confirmPassword')?.touched">
+                <small class="text-danger">Password and Confirm Password do not match !</small>
+              </div>
+            </div>
+            <div class="form-group mb-4 fw-bold">
+              <label class="text-white">Sign In As :-</label>
+              <select class="form-control" formControlName="role" placeholder="Please select one">
+                <option value="" disabled selected>Select your role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+            <div *ngIf="formError">
+              <small class="text-danger d-block mt-2 fw-bold text-center">Please fill all the required fields !</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

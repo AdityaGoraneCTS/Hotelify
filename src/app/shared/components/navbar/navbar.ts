@@ -1,26 +1,40 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, HostListener, ElementRef } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth-service';
 
 @Component({
   selector: 'app-navbar',
+  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrls: ['./navbar.css']
 })
 export class Navbar {
-  constructor(public authService: AuthService) {} // Make authService public to use in template
+  isDropdownOpen: boolean = false;
 
-  ngOnInit(): void {
-    // Optionally, you might want to trigger a check here if needed,
-    // but the async pipe handles subscriptions nicely.
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    private eRef: ElementRef
+  ) {}
+
+  toggleDropdown(event: Event): void {
+    event.stopPropagation();
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  logout(): void {
+  logout(event: Event): void {
+    event.stopPropagation(); // Prevents the HostListener from closing the dropdown immediately
     this.authService.logout();
-    // Redirect to home or login page after logout
-    // You might want to use Router service here:
-    // this.router.navigate(['/auth/login']);
+    this.isDropdownOpen = false; // Manually close the dropdown
+    this.router.navigate(['/login']); // Redirect to the login page
+  }
+  
+  @HostListener('document:click', ['$event'])
+  clickout(event: Event) {
+    if(!this.eRef.nativeElement.contains(event.target)) {
+      this.isDropdownOpen = false;
+    }
   }
 }
