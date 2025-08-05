@@ -109,15 +109,13 @@ export class SearchBarComponent {
   }
 
   onSearch(): void {
-    // The form.invalid check now includes the custom date range validator
     if (this.searchForm.invalid) return;
     const queryParams = {
-      ...this.searchForm.value,
-      guests: this.guests(),
-      rooms: this.rooms()
+
+      location: this.searchForm.get('location')?.value,
+     
     };
     this.router.navigate(['/search-results'], { queryParams });
-    //this.router.navigate(['/hotel-cards'], { queryParams });
   }
 
   @HostListener('document:click', ['$event.target'])
