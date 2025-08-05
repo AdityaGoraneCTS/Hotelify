@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomePage } from './pages/home/home-page/home-page';
 
-import { HotelCardComponent } from './pages/hotel-search-cards/hotel-search-cards/hotel-search-cards';
+import { HotelCardComponent } from './pages/search-results/hotel-search-cards/hotel-search-cards';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar';
 import { SearchResultComponent } from './pages/search-results/search-result-component/search-result-component';
 

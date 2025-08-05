@@ -108,14 +108,15 @@ export class SearchBarComponent {
     this.isGuestDropdownOpen.set(false);
   }
 
-onSearch(): void {
-  if (this.searchForm.invalid) return;
-  const queryParams = {
-    location: this.searchForm.get('location')?.value
-    // You can add other parameters here if needed
-  };
-  this.router.navigate(['/search-results'], { queryParams });
-}
+  onSearch(): void {
+    if (this.searchForm.invalid) return;
+    const queryParams = {
+
+      location: this.searchForm.get('location')?.value,
+     
+    };
+    this.router.navigate(['/search-results'], { queryParams });
+  }
 
   @HostListener('document:click', ['$event.target'])
   onClickOutside(target: EventTarget | null): void {

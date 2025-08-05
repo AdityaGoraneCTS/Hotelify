@@ -6,7 +6,7 @@ import { HotelService } from '../../../core/services/hotel-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { provideHttpClient } from '@angular/common/http';
-import { HotelCardComponent } from '../../hotel-search-cards/hotel-search-cards/hotel-search-cards';
+import { HotelCardComponent } from '../hotel-search-cards/hotel-search-cards';
 @Component({
   selector: 'app-search-result-component',
   imports: [CommonModule, HotelCardComponent],
