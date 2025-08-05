@@ -1,10 +1,6 @@
-
-
-
-
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Hotel } from '../../../core/models/hotel.model';
+import { Hotel, Room } from '../../../core/models/hotel.model';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -14,12 +10,13 @@ import { RouterModule } from '@angular/router';
   templateUrl: './hotel-search-cards.html',
   styleUrl: './hotel-search-cards.css'
 })
-export class HotelCardComponent {
+export class HotelCardComponent implements OnChanges {
   @Input() hotel!: Hotel;
+  lowestPriceRoom: Room | null = null;
 
   // Map features to Bootstrap Icons
   featureIcons: { [key: string]: string } = {
-    'Pool': 'bi-water',
+    'Swimming Pool': 'bi-water',
     'Spa': 'bi-gem',
     'Gym': 'bi-heart-pulse',
     'Restaurant': 'bi-restaurant',
@@ -27,6 +24,21 @@ export class HotelCardComponent {
     'Beach Access': 'bi-sun',
     'Business Center': 'bi-briefcase'
   };
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['hotel'] && this.hotel && this.hotel.rooms) {
+      this.lowestPriceRoom = this.getLowestPriceRoom();
+    }
+  }
+
+  getLowestPriceRoom(): Room | null {
+    if (!this.hotel || !this.hotel.rooms || this.hotel.rooms.length === 0) {
+      return null;
+    }
+    return this.hotel.rooms.reduce((lowest, current) =>
+      (current.discountedPrice < lowest.discountedPrice) ? current : lowest
+    );
+  }
 
   imageError(event: Event) {
     (event.target as HTMLImageElement).src = 'https://via.placeholder.com/320x320?text=Image+Not+Found';

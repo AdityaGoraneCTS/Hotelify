@@ -3,221 +3,1397 @@
     {
       "id": "h1",
       "name": "Hilton Chennai",
-      "location": "Guindy",
-      "city": "Chennai",
-      "features": ["Pool", "Spa", "Gym"],
+      "description": "A luxury hotel located in the heart of Chennai, offering modern amenities and exceptional service.",
+      "address": {
+        "street": "124/1, J.N. Salai",
+        "area": "Guindy",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "pincode": "600032"
+      },
       "type": "Hotel",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "features": [
+        "Swimming Pool",
+        "Spa",
+        "Gym",
+        "Restaurant"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Air Conditioning",
+        "Room Service"
+      ],
       "rating": 8.8,
       "reviews": 335,
-      "originalPrice": 17286,
-      "discountedPrice": 14663,
-      "discountPercentage": 15,
-      "totalPriceIncludesTaxes": 17302,
-      "images": ["https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+      "images": [
+        "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": true,
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 48 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1h1",
+          "name": "Deluxe Room",
+          "description": "Spacious room with a city view.",
+          "originalPrice": 17286,
+          "discountedPrice": 14663,
+          "discountPercentage": 15,
+          "totalPriceIncludesTaxes": 17302,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "TV",
+            "Mini-bar"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1596436889106-be35591325141e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 5
+        },
+        {
+          "id": "r2h1",
+          "name": "Executive Room",
+          "description": "Elevated room with executive lounge access and city views.",
+          "originalPrice": 22000,
+          "discountedPrice": 19800,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 23364,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Executive Lounge Access",
+            "Breakfast"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1618773959953-b3c4a0100f2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        },
+        {
+          "id": "r3h1",
+          "name": "Suite",
+          "description": "Spacious suite with a separate living area and a large bathroom.",
+          "originalPrice": 35000,
+          "discountedPrice": 31500,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 37170,
+          "maxGuests": 3,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Living Area",
+            "Minibar",
+            "Butler Service"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        }
+      ],
+      "contact": {
+        "phone": "+91-44-2225-5555",
+        "email": "chennai.reservations@hilton.com",
+        "website": "https://www.hilton.com/en/hotels/maahihi-hilton-chennai/"
+      },
       "availabilityMessage": "Available"
     },
     {
       "id": "h2",
       "name": "Pullman Chennai Anna Salai",
-      "location": "Anna Salai",
-      "city": "Chennai",
-      "features": ["Pool", "Gym", "Dining"],
+      "description": "A luxury resort with a focus on modern design and upscale amenities.",
+      "address": {
+        "street": "246, Anna Salai",
+        "area": "Anna Salai",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "pincode": "600006"
+      },
       "type": "Resort",
-      "isFullyRefundable": false,
-      "reserveNowPayLater": true,
-      "isPetFriendly": true,
-      "hasFreeBreakfast": false,
+      "features": [
+        "Swimming Pool",
+        "Gym",
+        "Fine Dining"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Spa",
+        "Pet-Friendly"
+      ],
       "rating": 8.8,
       "reviews": 659,
-      "originalPrice": 7830,
-      "discountedPrice": 7830,
-      "totalPriceIncludesTaxes": 9239,
-      "images": ["https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+      "images": [
+        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1546430498-d7b32607f159?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": false,
+      "hasFreeBreakfast": false,
+      "reserveNowPayLater": true,
+      "policies": {
+        "checkInTime": "15:00",
+        "checkOutTime": "11:00",
+        "cancellationPolicy": "No refund for cancellations.",
+        "smokingAllowed": true,
+        "petsAllowed": true
+      },
+      "rooms": [
+        {
+          "id": "r1h2",
+          "name": "Superior King Room",
+          "description": "Contemporary room with a king-size bed.",
+          "originalPrice": 7830,
+          "discountedPrice": 7830,
+          "discountPercentage": 0,
+          "totalPriceIncludesTaxes": 9239,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Safe",
+            "Desk"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1566073771259-d8901235123d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 10
+        },
+        {
+          "id": "r2h2",
+          "name": "Deluxe Twin Room",
+          "description": "Modern room with two single beds and city views.",
+          "originalPrice": 8500,
+          "discountedPrice": 8500,
+          "discountPercentage": 0,
+          "totalPriceIncludesTaxes": 10030,
+          "maxGuests": 2,
+          "bedType": "Twin",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "TV",
+            "Coffee Maker"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 7
+        },
+        {
+          "id": "r3h2",
+          "name": "Executive Suite",
+          "description": "Spacious suite with a separate living area and upgraded amenities.",
+          "originalPrice": 15000,
+          "discountedPrice": 14250,
+          "discountPercentage": 5,
+          "totalPriceIncludesTaxes": 16815,
+          "maxGuests": 4,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Mini-bar",
+            "Balcony",
+            "Living Room"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        }
+      ],
+      "contact": {
+        "phone": "+91-44-4228-5555",
+        "email": "reservations.chennai@pullman.com"
+      },
+      "availabilityMessage": "Available"
     },
     {
       "id": "m1",
       "name": "The Taj Mahal Palace, Mumbai",
-      "location": "Colaba",
-      "city": "Mumbai",
-      "features": ["Pool", "Spa", "Restaurant", "Gym"],
-      "type": "Hotel",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "description": "An iconic hotel offering a blend of heritage and modern luxury, with stunning views of the Arabian Sea.",
+      "address": {
+        "street": "Apollo Bunder",
+        "area": "Colaba",
+        "landmark": "Near Gateway of India",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "pincode": "400001"
+      },
+      "type": "Villa",
+      "features": [
+        "Swimming Pool",
+        "Spa",
+        "Restaurant",
+        "Gym",
+        "Harbor View"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Concierge",
+        "24/7 Room Service",
+        "Luxury Bedding"
+      ],
       "rating": 9.5,
       "reviews": 2100,
-      "originalPrice": 30000,
-      "discountedPrice": 28000,
-      "discountPercentage": 6,
-      "totalPriceIncludesTaxes": 33040,
-      "images": ["https://images.trvl-media.com/lodging/20000000/19460000/19458500/19458493/8cf0d468.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "images": [
+        "https://images.trvl-media.com/lodging/20000000/19460000/19458500/19458493/8cf0d468.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": true,
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 72 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1m1",
+          "name": "Executive City View Room",
+          "description": "Elegant room with a view of the city.",
+          "originalPrice": 30000,
+          "discountedPrice": 28000,
+          "discountPercentage": 6,
+          "totalPriceIncludesTaxes": 33040,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Minibar",
+            "24-hour butler service"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1618773959953-b3c4a0100f2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        },
+        {
+          "id": "r2m1",
+          "name": "Luxury Grand Heritage Room",
+          "description": "Luxurious room with a mix of modern and classic decor and views of the city.",
+          "originalPrice": 35000,
+          "discountedPrice": 32000,
+          "discountPercentage": 9,
+          "totalPriceIncludesTaxes": 37760,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Concierge Service",
+            "Luxury Toiletries"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1540518614846-7eded433c23e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 4
+        },
+        {
+          "id": "r3m1",
+          "name": "Suite with Sea View",
+          "description": "Lavish suite with a separate living area and a breathtaking view of the Arabian Sea.",
+          "originalPrice": 60000,
+          "discountedPrice": 55000,
+          "discountPercentage": 8,
+          "totalPriceIncludesTaxes": 64900,
+          "maxGuests": 4,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Sea View",
+            "Dining Area",
+            "Butler Service"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1566073771259-d8901235123d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        }
+      ],
+      "contact": {
+        "phone": "+91-22-6665-3366",
+        "email": "reservations.mumbai@tajhotels.com",
+        "website": "https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/"
+      },
+      "availabilityMessage": "Available"
     },
     {
       "id": "h3",
       "name": "Taj Krishna",
-      "location": "Banjara Hills",
-      "city": "Hyderabad",
-      "features": ["Pool", "Spa", "Gym"],
-      "type": "Hotel",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "description": "A prestigious hotel in the city's upscale Banjara Hills, known for its elegant architecture and grand hospitality.",
+      "address": {
+        "street": "Road No. 1, Banjara Hills",
+        "area": "Banjara Hills",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "country": "India",
+        "pincode": "500034"
+      },
+      "type": "Apartment",
+      "features": [
+        "Swimming Pool",
+        "Spa",
+        "Gym",
+        "Multiple Restaurants"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Business Center",
+        "24-hour front desk",
+        "Laundry service"
+      ],
       "rating": 9.1,
       "reviews": 1450,
-      "originalPrice": 15000,
-      "discountedPrice": 13500,
-      "discountPercentage": 10,
-      "totalPriceIncludesTaxes": 16000,
-      "images": ["https://images.trvl-media.com/lodging/1000000/700000/694800/694766/0f763fcc.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "images": [
+        "https://images.trvl-media.com/lodging/1000000/700000/694800/694766/0f763fcc.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1582719478233-300c0a9058b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": true,
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 48 hours prior to check-in.",
+        "smokingAllowed": true,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1h3",
+          "name": "Superior Room",
+          "description": "Comfortable room with all modern amenities.",
+          "originalPrice": 15000,
+          "discountedPrice": 13500,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 16000,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Safe",
+            "Coffee/Tea maker"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1540518614846-7eded433c23e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 7
+        },
+        {
+          "id": "r2h3",
+          "name": "Luxury Room",
+          "description": "Elegant room with sophisticated decor and views of the hotel gardens.",
+          "originalPrice": 18000,
+          "discountedPrice": 16200,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 19116,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Garden View",
+            "Premium Toiletries"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 5
+        },
+        {
+          "id": "r3h3",
+          "name": "Executive Suite",
+          "description": "Spacious suite with a separate living room and exclusive club access.",
+          "originalPrice": 25000,
+          "discountedPrice": 22500,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 26550,
+          "maxGuests": 3,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Club Access",
+            "Separate Living Room"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        }
+      ],
+      "contact": {
+        "phone": "+91-40-6666-3366",
+        "email": "tajkrishna.hyderabad@tajhotels.com",
+        "website": "https://www.tajhotels.com/en-in/taj/taj-krishna-hyderabad/"
+      },
+      "availabilityMessage": "Available"
     },
     {
       "id": "b1",
       "name": "ITC Gardenia, a Luxury Collection Hotel",
-      "location": "Ashok Nagar",
-      "city": "Bengaluru",
-      "features": ["Pool", "Spa", "Business Center", "Restaurant"],
+      "description": "An eco-friendly luxury hotel in Bengaluru's business and commercial hub, offering a serene escape.",
+      "address": {
+        "street": "1, Residency Road",
+        "area": "Ashok Nagar",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": "560025"
+      },
       "type": "Hotel",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "features": [
+        "Swimming Pool",
+        "Spa",
+        "Business Center",
+        "Restaurant",
+        "Rooftop Bar"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Concierge Service",
+        "Meeting Rooms"
+      ],
       "rating": 9.2,
       "reviews": 1850,
-      "originalPrice": 22000,
-      "discountedPrice": 20900,
-      "discountPercentage": 5,
-      "totalPriceIncludesTaxes": 24662,
-      "images": ["https://images.trvl-media.com/lodging/4000000/3120000/3114400/3114317/f5bc52c7.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "images": [
+        "https://images.trvl-media.com/lodging/4000000/3120000/3114400/3114317/f5bc52c7.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": true,
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 48 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1b1",
+          "name": "Gardenia Room",
+          "description": "A luxurious and spacious room with modern comforts.",
+          "originalPrice": 22000,
+          "discountedPrice": 20900,
+          "discountPercentage": 5,
+          "totalPriceIncludesTaxes": 24662,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Work Desk",
+            "Minibar"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1566195992224-35591325141e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 4
+        },
+        {
+          "id": "r2b1",
+          "name": "Oasis View Room",
+          "description": "Room with a view of the beautiful central pool and gardens.",
+          "originalPrice": 25000,
+          "discountedPrice": 23750,
+          "discountPercentage": 5,
+          "totalPriceIncludesTaxes": 28025,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Pool View",
+            "Balcony"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 6
+        },
+        {
+          "id": "r3b1",
+          "name": "The Leela Suite",
+          "description": "An expansive suite with a private terrace and a jacuzzi.",
+          "originalPrice": 50000,
+          "discountedPrice": 47500,
+          "discountPercentage": 5,
+          "totalPriceIncludesTaxes": 56050,
+          "maxGuests": 4,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Terrace",
+            "Jacuzzi",
+            "Butler Service"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        }
+      ],
+      "contact": {
+        "phone": "+91-80-2214-5000",
+        "email": "reservations.itcgardenia@itchotels.in"
+      },
+      "availabilityMessage": "Available"
     },
     {
       "id": "n1",
       "name": "The Leela Palace New Delhi",
-      "location": "Chanakyapuri",
-      "city": "New Delhi",
-      "features": ["Pool", "Spa", "Gym", "Airport Transfer"],
+      "description": "A modern palace hotel offering unparalleled luxury and service in the diplomatic enclave of New Delhi.",
+      "address": {
+        "street": "Diplomatic Enclave, Chanakyapuri",
+        "area": "Chanakyapuri",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "country": "India",
+        "pincode": "110023"
+      },
       "type": "Palace",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "features": [
+        "Swimming Pool",
+        "Spa",
+        "Gym",
+        "Airport Transfer",
+        "Fine Dining"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Butler Service",
+        "24/7 Concierge",
+        "Car Rental"
+      ],
       "rating": 9.6,
       "reviews": 2500,
-      "originalPrice": 35000,
-      "discountedPrice": 32200,
-      "discountPercentage": 8,
-      "totalPriceIncludesTaxes": 38000,
-      "images": ["https://images.trvl-media.com/lodging/4000000/3860000/3851700/3851663/814a6164.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "images": [
+        "https://images.trvl-media.com/lodging/4000000/3860000/3851700/3851663/814a6164.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": true,
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 72 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1n1",
+          "name": "Grand Deluxe Room",
+          "description": "Luxurious room with elegant decor and palace views.",
+          "originalPrice": 35000,
+          "discountedPrice": 32200,
+          "discountPercentage": 8,
+          "totalPriceIncludesTaxes": 38000,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Personal butler",
+            "Luxury toiletries"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1560662283-bc2e7969399f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        },
+        {
+          "id": "r2n1",
+          "name": "Royal Suite",
+          "description": "An opulent suite with a separate living room, dining area, and personalized butler service.",
+          "originalPrice": 80000,
+          "discountedPrice": 72000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 84960,
+          "maxGuests": 4,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Butler Service",
+            "Dining Area",
+            "Private Bar"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        },
+        {
+          "id": "r3n1",
+          "name": "Maharaja Suite",
+          "description": "The ultimate in luxury with a private pool and panoramic views of the city.",
+          "originalPrice": 150000,
+          "discountedPrice": 135000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 159300,
+          "maxGuests": 5,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Pool",
+            "24/7 Butler",
+            "Sauna"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1566073771259-d8901235123d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": false,
+          "quantityAvailable": 0
+        }
+      ],
+      "contact": {
+        "phone": "+91-11-3933-1234",
+        "email": "reservations@theleela.com"
+      },
+      "availabilityMessage": "Available"
     },
     {
       "id": "j1",
       "name": "The Oberoi Rajvilas Jaipur",
-      "location": "Goner Road",
-      "city": "Jaipur",
-      "features": ["Pool", "Spa", "Restaurant", "Gardens"],
-      "type": "Resort",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "description": "An enchanting resort set in 32 acres of gardens, offering luxury tents and villas, and a unique experience of Rajasthani culture.",
+      "address": {
+        "street": "Goner Road",
+        "area": "Goner",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "country": "India",
+        "pincode": "302031"
+      },
+      "type": "Guest House",
+      "features": [
+        "Swimming Pool",
+        "Spa",
+        "Restaurant",
+        "Gardens",
+        "Traditional Architecture"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Yoga Sessions",
+        "Cooking Classes",
+        "Cultural Performances"
+      ],
       "rating": 9.8,
       "reviews": 1900,
-      "originalPrice": 45000,
-      "discountedPrice": 42000,
-      "discountPercentage": 7,
-      "totalPriceIncludesTaxes": 49560,
-      "images": ["https://images.trvl-media.com/lodging/1000000/800000/791000/790963/1571c06e.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
-    },
-    {
-      "id": "g1",
-      "name": "Novotel Goa Resort & Spa",
-      "location": "Candolim",
-      "city": "Goa",
-      "features": ["Pool", "Spa", "Gym", "Beach Access"],
-      "type": "Resort",
-      "isFullyRefundable": false,
-      "reserveNowPayLater": true,
-      "isPetFriendly": true,
-      "hasFreeBreakfast": true,
-      "rating": 8.5,
-      "reviews": 1100,
-      "originalPrice": 12000,
-      "discountedPrice": 12000,
-      "totalPriceIncludesTaxes": 14160,
-      "images": ["https://images.trvl-media.com/lodging/8000000/7790000/7785900/7785821/8343d4f7.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
-    },
-    {
-      "id": "k1",
-      "name": "The Oberoi Grand, Kolkata",
-      "location": "Esplanade",
-      "city": "Kolkata",
-      "features": ["Pool", "Spa", "Restaurant", "Bar"],
-      "type": "Hotel",
+      "images": [
+        "https://images.trvl-media.com/lodging/1000000/800000/791000/790963/1571c06e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
       "isFullyRefundable": true,
-      "isPetFriendly": false,
       "hasFreeBreakfast": true,
-      "rating": 9.0,
-      "reviews": 1520,
-      "originalPrice": 18500,
-      "discountedPrice": 16650,
-      "discountPercentage": 10,
-      "totalPriceIncludesTaxes": 19647,
-      "images": ["https://images.trvl-media.com/lodging/1000000/10000/4800/4772/db54fd8e.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 96 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1j1",
+          "name": "Luxury Tent",
+          "description": "Luxurious tent with a private garden and a four-poster bed.",
+          "originalPrice": 45000,
+          "discountedPrice": 42000,
+          "discountPercentage": 7,
+          "totalPriceIncludesTaxes": 49560,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private garden",
+            "Marble bathroom"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        },
+        {
+          "id": "r2j1",
+          "name": "Premier Room with Garden View",
+          "description": "Spacious room with a private balcony overlooking the lush gardens.",
+          "originalPrice": 55000,
+          "discountedPrice": 50000,
+          "discountPercentage": 9,
+          "totalPriceIncludesTaxes": 59000,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Balcony",
+            "Garden View"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1540518614846-7eded433c23e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        },
+        {
+          "id": "r3j1",
+          "name": "Luxury Villa with Private Pool",
+          "description": "An exclusive villa with its own private heated swimming pool and a secluded garden.",
+          "originalPrice": 90000,
+          "discountedPrice": 85000,
+          "discountPercentage": 6,
+          "totalPriceIncludesTaxes": 100300,
+          "maxGuests": 4,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Pool",
+            "Personal Butler",
+            "Jacuzzi"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1566195992224-35591325141e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        }
+      ],
+      "contact": {
+        "phone": "+91-141-268-0101",
+        "email": "reservations.rajvilas@oberoihotels.com"
+      },
+      "availabilityMessage": "Available"
+    },
+    {
+      "id": "c1",
+      "name": "Cochin Backwater Cottages",
+      "description": "Quaint cottages by the serene backwaters of Kerala.",
+      "address": {
+        "street": "Alleppey Road",
+        "area": "Fort Kochi",
+        "city": "Cochin",
+        "state": "Kerala",
+        "country": "India",
+        "pincode": "682001"
+      },
+      "type": "Cottage",
+      "features": [
+        "Private Balcony",
+        "Backwater View",
+        "Restaurant",
+        "Boating"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Air Conditioning",
+        "Room Service"
+      ],
+      "rating": 9.4,
+      "reviews": 120,
+      "images": [
+        "https://images.trvl-media.com/lodging/113000000/112500000/112499100/112499097/829c512e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": true,
+      "reserveNowPayLater": true,
+      "policies": {
+        "checkInTime": "13:00",
+        "checkOutTime": "11:00",
+        "cancellationPolicy": "Full refund if cancelled 72 hours prior to check-in.",
+        "smokingAllowed": true,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1c1",
+          "name": "Backwater View Cottage",
+          "description": "A cozy cottage with a balcony overlooking the backwaters.",
+          "originalPrice": 12000,
+          "discountedPrice": 10500,
+          "discountPercentage": 13,
+          "totalPriceIncludesTaxes": 12390,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "TV",
+            "Mini-bar"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1582719508461-901d516b6712?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 4
+        },
+        {
+          "id": "r2c1",
+          "name": "Family Cottage",
+          "description": "Spacious cottage with two rooms, ideal for families.",
+          "originalPrice": 25000,
+          "discountedPrice": 22000,
+          "discountPercentage": 12,
+          "totalPriceIncludesTaxes": 25960,
+          "maxGuests": 4,
+          "bedType": "Queen",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "2 Bathrooms",
+            "Mini-fridge"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1618773959953-b3c4a0100f2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        },
+        {
+          "id": "r3c1",
+          "name": "Deluxe Cottage",
+          "description": "Luxurious cottage with a private sit-out area and backwater access.",
+          "originalPrice": 18000,
+          "discountedPrice": 16000,
+          "discountPercentage": 11,
+          "totalPriceIncludesTaxes": 18880,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Sit-out",
+            "TV"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        }
+      ],
+      "contact": {
+        "phone": "+91-484-2345678",
+        "email": "reservations@cochincottages.com",
+        "website": "https://www.cochincottages.com"
+      },
+      "availabilityMessage": "Available"
     },
     {
       "id": "p1",
-      "name": "Hyatt Regency Pune",
-      "location": "Viman Nagar",
-      "city": "Pune",
-      "features": ["Pool", "Gym", "Dining", "Business Center"],
-      "type": "Hotel",
-      "isFullyRefundable": false,
+      "name": "Pune Serenity Villa",
+      "description": "A tranquil villa nestled in the hills of Pune, perfect for a peaceful getaway.",
+      "address": {
+        "street": "101 Hilltop Road",
+        "area": "Lonavala",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "pincode": "410401"
+      },
+      "type": "Villa",
+      "features": [
+        "Private Pool",
+        "Scenic View",
+        "BBQ Grill",
+        "Gardens"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Air Conditioning",
+        "Housekeeping"
+      ],
+      "rating": 9.2,
+      "reviews": 95,
+      "images": [
+        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": false,
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "15:00",
+        "checkOutTime": "11:00",
+        "cancellationPolicy": "Full refund if cancelled 96 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": true
+      },
+      "rooms": [
+        {
+          "id": "r1p1",
+          "name": "The Serene Suite",
+          "description": "A lavish suite with a private terrace and stunning garden views.",
+          "originalPrice": 25000,
+          "discountedPrice": 22500,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 26550,
+          "maxGuests": 4,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Terrace",
+            "Dining Area"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        },
+        {
+          "id": "r2p1",
+          "name": "Deluxe Villa Room",
+          "description": "A spacious room with a balcony and panoramic views of the valley.",
+          "originalPrice": 18000,
+          "discountedPrice": 16000,
+          "discountPercentage": 11,
+          "totalPriceIncludesTaxes": 18880,
+          "maxGuests": 2,
+          "bedType": "Queen",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "TV",
+            "Balcony"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1560662283-bc2e7969399f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        },
+        {
+          "id": "r3p1",
+          "name": "Luxury Cottage",
+          "description": "A standalone cottage with a private garden, ideal for couples.",
+          "originalPrice": 20000,
+          "discountedPrice": 18000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 21240,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Garden",
+            "Outdoor Seating"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        }
+      ],
+      "contact": {
+        "phone": "+91-20-23456789",
+        "email": "reservations@punevillas.com",
+        "website": "https://www.puneserenity.com"
+      },
+      "availabilityMessage": "Available"
+    },
+    {
+      "id": "k1",
+      "name": "Kolkata Riverview Apartments",
+      "description": "Elegant apartments with stunning views of the Hooghly River.",
+      "address": {
+        "street": "1/A Strand Road",
+        "area": "Howrah",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "country": "India",
+        "pincode": "700001"
+      },
+      "type": "Apartment",
+      "features": [
+        "River View",
+        "Gym",
+        "Restaurant",
+        "Roof Top Lounge"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Air Conditioning",
+        "Kitchenette"
+      ],
+      "rating": 9.0,
+      "reviews": 210,
+      "images": [
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": false,
       "reserveNowPayLater": true,
-      "isPetFriendly": true,
-      "hasFreeBreakfast": true,
-      "rating": 8.7,
-      "reviews": 980,
-      "originalPrice": 11000,
-      "discountedPrice": 11000,
-      "totalPriceIncludesTaxes": 12980,
-      "images": ["https://images.trvl-media.com/lodging/4000000/3770000/3763800/3763792/e2d0d81b.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "12:00",
+        "cancellationPolicy": "Full refund if cancelled 48 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1k1",
+          "name": "Studio Apartment",
+          "description": "Compact and stylish apartment for a single traveler or couple.",
+          "originalPrice": 12000,
+          "discountedPrice": 10800,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 12744,
+          "maxGuests": 2,
+          "bedType": "Queen",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Kitchenette",
+            "TV"
+          ],
+          "images": [
+            ""
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 5
+        },
+        {
+          "id": "r2k1",
+          "name": "One-Bedroom Apartment",
+          "description": "A spacious apartment with a separate living room and river views.",
+          "originalPrice": 18000,
+          "discountedPrice": 16200,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 19116,
+          "maxGuests": 3,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Living Room",
+            "River View"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1618773959953-b3c4a0100f2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        },
+        {
+          "id": "r3k1",
+          "name": "Deluxe Apartment",
+          "description": "Luxurious apartment with multiple bedrooms and a large kitchen.",
+          "originalPrice": 30000,
+          "discountedPrice": 27000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 31860,
+          "maxGuests": 5,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Kitchen",
+            "Dining Area"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        }
+      ],
+      "contact": {
+        "phone": "+91-33-2555-5555",
+        "email": "reservations@kolkataapartments.com",
+        "website": "https://www.kolkatariverview.com"
+      },
+      "availabilityMessage": "Available"
     },
     {
-      "id": "a1",
-      "name": "Taj Hotel & Convention Centre, Agra",
-      "location": "Fatehabad Road",
-      "city": "Agra",
-      "features": ["Pool", "Spa", "Restaurant", "Shuttle Service"],
-      "type": "Hotel",
-      "isFullyRefundable": true,
-      "isPetFriendly": false,
-      "hasFreeBreakfast": true,
+      "id": "m2",
+      "name": "Coastal Cottage Retreat",
+      "description": "A charming cottage by the sea, offering a peaceful and scenic escape from the city.",
+      "address": {
+        "street": "123 Coastal Road",
+        "area": "Alibaug",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "pincode": "402209"
+      },
+      "type": "Cabin",
+      "features": [
+        "Beach Access",
+        "Garden",
+        "Outdoor Seating",
+        "BBQ"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Air Conditioning",
+        "Housekeeping"
+      ],
       "rating": 9.3,
-      "reviews": 2300,
-      "originalPrice": 15000,
-      "discountedPrice": 13950,
-      "discountPercentage": 7,
-      "totalPriceIncludesTaxes": 16450,
-      "images": ["https://images.trvl-media.com/lodging/5000000/4530000/4524300/4524241/66ef80c2.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "reviews": 150,
+      "images": [
+        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "isFullyRefundable": true,
+      "hasFreeBreakfast": false,
+      "reserveNowPayLater": true,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "11:00",
+        "cancellationPolicy": "Full refund if cancelled 48 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1m2",
+          "name": "Garden View Cottage",
+          "description": "A cottage with a private garden view, ideal for a relaxing stay.",
+          "originalPrice": 15000,
+          "discountedPrice": 13000,
+          "discountPercentage": 13,
+          "totalPriceIncludesTaxes": 15340,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Private Garden",
+            "TV"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1566195992224-35591325141e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 3
+        },
+        {
+          "id": "r2m2",
+          "name": "Sea View Cottage",
+          "description": "A beautiful cottage with a stunning view of the Arabian Sea.",
+          "originalPrice": 20000,
+          "discountedPrice": 18000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 21240,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "Sea View",
+            "Balcony"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1540518614846-7eded433c23e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        },
+        {
+          "id": "r3m2",
+          "name": "Family Cottage Suite",
+          "description": "A spacious cottage with two separate rooms, ideal for a family vacation.",
+          "originalPrice": 30000,
+          "discountedPrice": 27000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 31860,
+          "maxGuests": 4,
+          "bedType": "Queen",
+          "amenities": [
+            "WiFi",
+            "AC",
+            "2 Bathrooms",
+            "Kitchenette"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        }
+      ],
+      "contact": {
+        "phone": "+91-22-22334455",
+        "email": "info@coastalretreat.com"
+      },
+      "availabilityMessage": "Available"
     },
     {
-      "id": "u1",
-      "name": "The Leela Palace Udaipur",
-      "location": "Lake Pichola",
-      "city": "Udaipur",
-      "features": ["Pool", "Spa", "Fine Dining", "Airport Transfer"],
-      "type": "Palace",
+      "id": "o1",
+      "name": "Ooty Tea Estate Cottage",
+      "description": "A cozy cottage retreat located in the heart of a tea estate, offering stunning views and a tranquil atmosphere.",
+      "address": {
+        "street": "1/2, Tea Estate Road",
+        "area": "Lovedale",
+        "city": "Ooty",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "pincode": "643003"
+      },
+      "type": "Cottage",
+      "features": [
+        "Tea Estate Tour",
+        "Gardens",
+        "Bonfire"
+      ],
+      "amenities": [
+        "Free WiFi",
+        "Parking",
+        "Room Service",
+        "Heaters"
+      ],
+      "rating": 9.5,
+      "reviews": 85,
+      "images": [
+        "https://images.trvl-media.com/lodging/101000000/100750000/100743400/100743349/374a030e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "https://images.unsplash.com/photo-1566073771259-d8901235123d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
       "isFullyRefundable": true,
-      "isPetFriendly": false,
       "hasFreeBreakfast": true,
-      "rating": 9.9,
-      "reviews": 3100,
-      "originalPrice": 50000,
-      "discountedPrice": 47500,
-      "discountPercentage": 5,
-      "totalPriceIncludesTaxes": 56050,
-      "images": ["https://images.trvl-media.com/lodging/4000000/3030000/3021100/3021032/64466ae7.jpg?impolicy=resizecrop&rw=1200&ra=fit"]
+      "reserveNowPayLater": false,
+      "policies": {
+        "checkInTime": "14:00",
+        "checkOutTime": "11:00",
+        "cancellationPolicy": "Full refund if cancelled 72 hours prior to check-in.",
+        "smokingAllowed": false,
+        "petsAllowed": false
+      },
+      "rooms": [
+        {
+          "id": "r1o1",
+          "name": "Tea Garden View Cottage",
+          "description": "A charming cottage with a balcony offering a panoramic view of the tea gardens.",
+          "originalPrice": 10000,
+          "discountedPrice": 9000,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 10620,
+          "maxGuests": 2,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "Heater",
+            "Balcony",
+            "TV"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1540518614846-7eded433c23e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 4
+        },
+        {
+          "id": "r2o1",
+          "name": "Deluxe Cottage",
+          "description": "A spacious cottage with a separate seating area and a private garden access.",
+          "originalPrice": 15000,
+          "discountedPrice": 13500,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 15930,
+          "maxGuests": 3,
+          "bedType": "Queen",
+          "amenities": [
+            "WiFi",
+            "Heater",
+            "Private Garden",
+            "Living Area"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1560662283-bc2e7969399f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 2
+        },
+        {
+          "id": "r3o1",
+          "name": "Family Cottage Suite",
+          "description": "An expansive cottage suite with multiple beds, ideal for a large family.",
+          "originalPrice": 25000,
+          "discountedPrice": 22500,
+          "discountPercentage": 10,
+          "totalPriceIncludesTaxes": 26550,
+          "maxGuests": 5,
+          "bedType": "King",
+          "amenities": [
+            "WiFi",
+            "Heater",
+            "Kitchenette",
+            "Dining Table"
+          ],
+          "images": [
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          ],
+          "isAvailable": true,
+          "quantityAvailable": 1
+        }
+      ],
+      "contact": {
+        "phone": "+91-423-2442222",
+        "email": "reservations@ootycottages.com"
+      },
+      "availabilityMessage": "Available"
     }
-  ],
-
-  "profile" : []
+  ]
 }
