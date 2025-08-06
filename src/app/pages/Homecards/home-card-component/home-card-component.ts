@@ -141,12 +141,13 @@ export class HomeCardComponent implements OnInit, AfterViewInit, OnDestroy {
     this.router.navigate(['/results'], { queryParams: { location: location } });
   }
 
-  navigateToHotelDetails(hotelId: number): void {
+  // FIX: Change the parameter type from 'number' to 'string'
+  navigateToHotelDetails(hotelId: string): void {
     this.router.navigate(['/hotel-details', hotelId]);
   }
 
 
-  navigateToLocation(location: string, id: number | null = null): void {
+  navigateToLocation(location: string, id: string | null = null): void {
     const queryParams: any = {};
     if (location) {
       queryParams.location = location;
