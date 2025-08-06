@@ -1,0 +1,33 @@
+<div class="add-hotel-container">
+  <h2>List Your Hotel</h2>
+  <div class="stepper-timeline">
+    <div *ngFor="let step of steps" 
+         class="stepper-step" 
+         [ngClass]="{ 'active': currentStep === step.key, 'completed': currentStep > step.key }">
+      <div class="stepper-circle">{{ step.key }}</div>
+      <div class="stepper-label">{{ step.label }}</div>
+      <div class="stepper-line" *ngIf="step.key < steps.length"></div>
+    </div>
+  </div>
+
+  <app-basic-information 
+    *ngIf="currentStep === 1" 
+    [initialData]="hotelData"
+    (formSubmitted)="onBasicInfoSubmitted($event)">
+  </app-basic-information>
+
+  <app-location-contact
+    *ngIf="currentStep === 2"
+    [initialData]="hotelData"
+    (formSubmitted)="onLocationContactSubmitted($event)"
+    (goBack)="onGoBack()">
+  </app-location-contact>
+
+  <app-photos-media
+    *ngIf="currentStep === 3"
+    [initialImages]="hotelData.images || []"
+    (formSubmitted)="onPhotosMediaSubmitted($event)"
+    (goBack)="onGoBack()">
+  </app-photos-media>
+
+  </div>
