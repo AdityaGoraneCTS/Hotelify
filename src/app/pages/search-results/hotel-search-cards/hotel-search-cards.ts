@@ -2,7 +2,6 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Hotel, Room } from '../../../core/models/hotel.model';
 import { RouterModule } from '@angular/router';
-
 @Component({
   selector: 'app-hotel-search-cards',
   standalone: true,

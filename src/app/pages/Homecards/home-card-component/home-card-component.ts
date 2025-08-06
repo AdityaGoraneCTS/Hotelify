@@ -132,9 +132,7 @@ export class HomeCardComponent implements OnInit, AfterViewInit, OnDestroy {
     this.updateArrowVisibility(this.dealsScroll, 'deals');
   }
 
-  // --- MODIFIED CODE ---
 
-  // Refactored navigation to be more specific
   navigateToPropertyType(type: string): void {
     this.router.navigate(['/results'], { queryParams: { type: type } });
   }
@@ -143,12 +141,11 @@ export class HomeCardComponent implements OnInit, AfterViewInit, OnDestroy {
     this.router.navigate(['/results'], { queryParams: { location: location } });
   }
 
-  navigateToDeal(hotelId: number): void {
-    this.router.navigate(['/results'], { queryParams: { hotelId: hotelId } });
+  navigateToHotelDetails(hotelId: number): void {
+    this.router.navigate(['/hotel-details', hotelId]);
   }
 
-  // NOTE: The original navigateToLocation is no longer needed but kept for context.
-  // We'll replace the calls in the HTML with the new, more specific functions.
+
   navigateToLocation(location: string, id: number | null = null): void {
     const queryParams: any = {};
     if (location) {
@@ -159,8 +156,6 @@ export class HomeCardComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.router.navigate(['/results'], { queryParams });
   }
-
-  // --- END OF MODIFIED CODE ---
 
   getRatingText(rating: number): string {
     if (rating >= 4.5) {

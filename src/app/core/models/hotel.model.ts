@@ -43,6 +43,7 @@ export interface Hotel {
   rating: number;
   reviews: number;
   images: string[];
+  primaryImage?:string;
   isFullyRefundable: boolean;
   hasFreeBreakfast: boolean;
   reserveNowPayLater: boolean;

@@ -63,7 +63,7 @@
     <div #homesScroll class="scroll-container d-flex gap-4" (scroll)="updateHomesArrows()">
       <div *ngFor="let home of homesCards" class="card flex-shrink-0 card-snap-item mt-3"
         style="width: 18rem; height: auto; cursor: pointer;"
-        (click)="navigateToDeal(home.id)">
+        (click)="navigateToHotelDetails(home.id)">
         <img [src]="home.image" class="card-img-top" alt="{{ home.hotelName }}">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">
@@ -94,7 +94,7 @@
     <div #dealsScroll class="scroll-container d-flex gap-4" (scroll)="updateDealsArrows()">
       <div *ngFor="let deal of dealsCards" class="card flex-shrink-0 card-snap-item mt-3"
         style="width: 18rem; height: auto; cursor: pointer;"
-        (click)="navigateToDeal(deal.id)">
+        (click)="navigateToHotelDetails(deal.id)">
         <img [src]="deal.image" class="card-img-top" alt="{{ deal.hotelName }}">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">

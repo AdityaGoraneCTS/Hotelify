@@ -1,3 +1,4 @@
+// home-card.service.ts
 // src/app/core/services/home-card-service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -28,7 +29,7 @@ export class HomeCardService {
         return types.map((type, index) => {
           const hotel = hotels.find(h => h.type === type);
           return {
-            id: index + 1,
+            id: hotel ? hotel.id : '', // FIX: Use existing hotel ID as string
             title: type + 's',
             type: type,
             image: hotel ? hotel.images[0] : 'https://placehold.co/263x210'
@@ -42,12 +43,11 @@ export class HomeCardService {
   getPopularCards(): Observable<PopularCards[]> {
     return this.getHotels().pipe(
       map(hotels => {
-        // FIX: Add more cities to this array to create more cards.
         const popularCities = ['Chennai', 'Hyderabad', 'Mumbai', 'New Delhi', 'Bengaluru', 'Pune', 'Kolkata', 'Jaipur'];
-        return popularCities.map((city, index) => {
+        return popularCities.map((city) => {
           const hotel = hotels.find(h => h.address.city === city);
           return {
-            id: index + 1,
+            id: hotel ? hotel.id : '', // FIX: Use existing hotel ID as string
             title: city,
             image: hotel ? hotel.images[0] : 'https://placehold.co/170x136'
           };
@@ -62,7 +62,7 @@ export class HomeCardService {
       map(hotels => {
         return hotels.filter(h => h.type === 'Cottage' || h.type === 'Apartment' || h.type === 'Villa')
           .map(hotel => ({
-            id: Number(hotel.id),
+            id: hotel.id, // FIX: Use the original string ID
             title: hotel.name,
             hotelName: hotel.name,
             city: hotel.address.city,
@@ -82,7 +82,7 @@ export class HomeCardService {
       map(hotels => {
         return hotels.filter(h => h.rooms.length > 0 && h.rooms[0].discountedPrice < h.rooms[0].originalPrice)
           .map(hotel => ({
-            id: Number(hotel.id),
+            id: hotel.id, // FIX: Use the original string ID
             title: 'Top Deal',
             hotelName: hotel.name,
             city: hotel.address.city,

@@ -14,7 +14,7 @@ import { HotelCardComponent } from '../hotel-search-cards/hotel-search-cards';
 @Component({
   selector: 'app-search-result-component',
   standalone: true,
-  imports: [CommonModule, HotelCardComponent, SearchBarComponent],
+  imports: [CommonModule, HotelCardComponent],
   templateUrl: './search-result-component.html',
   styleUrl: './search-result-component.css'
 })
