@@ -1,16 +1,20 @@
+// home-card.ts
 import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { DiscoverCards, PopularCards, TopDealCards, UniqueCards } from '../../../core/models/home-cards-model';
-import { CardsService } from '../../../core/services/home-card-service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
+import { HomeCardService } from './../../../core/services/home-card-service';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-home-card-component',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './home-card-component.html',
-  styleUrl: './home-card-component.css'
+  styleUrls: ['./home-card-component.css']
 })
-export class HomeCardComponent {
+export class HomeCardComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('propertyScroll') propertyScroll!: ElementRef;
   @ViewChild('popularScroll') popularScroll!: ElementRef;
   @ViewChild('homesScroll') homesScroll!: ElementRef;
@@ -28,17 +32,37 @@ export class HomeCardComponent {
   homesCards: UniqueCards[] = [];
   dealsCards: TopDealCards[] = [];
 
-  constructor(private cardsService: CardsService, private router: Router) { }
+  private subscriptions = new Subscription();
+
+  constructor(private hotelService: HomeCardService, private router: Router) { }
 
   ngOnInit(): void {
-    this.propertyCards = this.cardsService.getDiscoverCards();
-    this.cards = this.cardsService.getPopularCards();
-    this.homesCards = this.cardsService.getUniqueCards();
-    this.dealsCards = this.cardsService.getTopDealCards();
+    this.subscriptions.add(
+      this.hotelService.getDiscoverCards().subscribe(data => {
+        this.propertyCards = data;
+      })
+    );
+
+    this.subscriptions.add(
+      this.hotelService.getPopularCards().subscribe(data => {
+        this.cards = data;
+      })
+    );
+
+    this.subscriptions.add(
+      this.hotelService.getUniqueCards().subscribe(data => {
+        this.homesCards = data;
+      })
+    );
+
+    this.subscriptions.add(
+      this.hotelService.getTopDealCards().subscribe(data => {
+        this.dealsCards = data;
+      })
+    );
   }
 
   ngAfterViewInit(): void {
-    // A small delay to ensure view is rendered before checking arrows
     setTimeout(() => {
       this.updatePropertyArrows();
       this.updatePopularArrows();
@@ -48,7 +72,7 @@ export class HomeCardComponent {
   }
 
   ngOnDestroy(): void {
-    // Since (scroll) is used in the template, Angular handles listener cleanup.
+    this.subscriptions.unsubscribe();
   }
 
   @HostListener('window:resize')
@@ -82,14 +106,14 @@ export class HomeCardComponent {
   }
 
   private updateArrowVisibility(ref: ElementRef, section: keyof typeof this.arrowVisibility) {
-    if (!ref) return;
+    if (!ref || !ref.nativeElement) return;
     const container = ref.nativeElement;
     const scrollLeft = container.scrollLeft;
     const scrollWidth = container.scrollWidth;
     const clientWidth = container.clientWidth;
 
     this.arrowVisibility[section].left = scrollLeft > 0;
-    this.arrowVisibility[section].right = scrollLeft + clientWidth < scrollWidth - 1; // 1px tolerance
+    this.arrowVisibility[section].right = scrollLeft + clientWidth < scrollWidth - 1;
   }
 
   updatePropertyArrows() {
@@ -108,21 +132,35 @@ export class HomeCardComponent {
     this.updateArrowVisibility(this.dealsScroll, 'deals');
   }
 
-  // Use this single method for all card clicks
-  navigateToLocation(location: string, id: number | null = null): void {
-    if (location) {
-      this.router.navigate(['/results'], { queryParams: { location: location } });
-    } else {
-      // Fallback for cases where location is not provided
-      this.router.navigate(['/results']);
-    }
+  // --- MODIFIED CODE ---
+
+  // Refactored navigation to be more specific
+  navigateToPropertyType(type: string): void {
+    this.router.navigate(['/results'], { queryParams: { type: type } });
   }
 
-  // The goToDetails method is now obsolete if all cards navigate to the results page
-  // If you still need it, here is a corrected version:
-  // goToDetails(id: number) {
-  //   alert(`Clicked on Card ${id}`);
-  // }
+  navigateToDestination(location: string): void {
+    this.router.navigate(['/results'], { queryParams: { location: location } });
+  }
+
+  navigateToDeal(hotelId: number): void {
+    this.router.navigate(['/results'], { queryParams: { hotelId: hotelId } });
+  }
+
+  // NOTE: The original navigateToLocation is no longer needed but kept for context.
+  // We'll replace the calls in the HTML with the new, more specific functions.
+  navigateToLocation(location: string, id: number | null = null): void {
+    const queryParams: any = {};
+    if (location) {
+      queryParams.location = location;
+    }
+    if (id) {
+      queryParams.id = id;
+    }
+    this.router.navigate(['/results'], { queryParams });
+  }
+
+  // --- END OF MODIFIED CODE ---
 
   getRatingText(rating: number): string {
     if (rating >= 4.5) {

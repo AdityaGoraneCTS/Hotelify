@@ -1,3 +1,5 @@
+// hotel.service.ts
+
 import { Injectable, inject } from '@angular/core';
 import { Hotel } from './../models/hotel.model';
 import { HttpClient } from '@angular/common/http';
@@ -8,25 +10,59 @@ import { Observable, map } from 'rxjs';
 })
 export class HotelService {
   private http = inject(HttpClient);
-  private hotelsUrl = 'http://localhost:3000/hotels'; // URL for your json-server
+  private hotelsUrl = 'http://localhost:3000/hotels';
 
-  // Fetches all hotels and performs client-side filtering
   searchHotels(query: string): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.hotelsUrl).pipe(
       map(allHotels => {
         if (!query) {
-          return allHotels; // If no query, return all hotels
+          return allHotels;
         }
         const lowerCaseQuery = query.toLowerCase();
         return allHotels.filter(hotel =>
-          hotel.city.toLowerCase().includes(lowerCaseQuery) ||
-          hotel.location.toLowerCase().includes(lowerCaseQuery) ||
-          hotel.name.toLowerCase().includes(lowerCaseQuery)
+          hotel.name.toLowerCase().includes(lowerCaseQuery) ||
+          (hotel.address.area && hotel.address.area.toLowerCase().includes(lowerCaseQuery)) ||
+          hotel.address.city.toLowerCase().includes(lowerCaseQuery) ||
+          hotel.address.state.toLowerCase().includes(lowerCaseQuery) ||
+          hotel.address.country.toLowerCase().includes(lowerCaseQuery)
+        );
+      })
+    );
+  }
+
+  getHotelById(id: string): Observable<Hotel | undefined> {
+    return this.http.get<Hotel[]>(this.hotelsUrl).pipe(
+      map(hotels => hotels.find(hotel => hotel.id === id))
+    );
+  }
+
+  // --- MODIFIED METHODS ---
+
+  getAllHotels(): Observable<Hotel[]> {
+    return this.http.get<Hotel[]>(this.hotelsUrl);
+  }
+
+  searchHotelsByLocation(location: string): Observable<Hotel[]> {
+    const lowerCaseLocation = location.toLowerCase();
+    return this.http.get<Hotel[]>(this.hotelsUrl).pipe(
+      map(allHotels => {
+        return allHotels.filter(hotel =>
+          // The fix: Add a nullish check for hotel.address.city
+          hotel.address.city && hotel.address.city.toLowerCase() === lowerCaseLocation
+        );
+      })
+    );
+  }
+
+  searchHotelsByType(type: string): Observable<Hotel[]> {
+    const lowerCaseType = type.toLowerCase();
+    return this.http.get<Hotel[]>(this.hotelsUrl).pipe(
+      map(allHotels => {
+        return allHotels.filter(hotel =>
+          // The fix: Add a nullish check for hotel.type
+          hotel.type && hotel.type.toLowerCase() === lowerCaseType
         );
       })
     );
   }
 }
-
-
-

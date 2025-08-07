@@ -27,7 +27,24 @@
     *ngIf="currentStep === 3"
     [initialImages]="hotelData.images || []"
     (formSubmitted)="onPhotosMediaSubmitted($event)"
-    (goBack)="onGoBack()">
+    (goBack)="onGoBack()"
+    (imagesUpdated)="onImagesUpdated($event)"> 
   </app-photos-media>
+
+  <app-features-amenities
+    *ngIf="currentStep === 4"
+    [initialData]="hotelData"
+    (formSubmitted)="onFeaturesAmenitiesSubmitted($event)"
+    (goBack)="onGoBack()"
+    (featuresAmenitiesUpdated)="onFeaturesAmenitiesUpdated($event)"> 
+  </app-features-amenities>
+
+  <app-policies
+    *ngIf="currentStep === 5"
+    [initialData]="hotelData"
+    (formSubmitted)="onPoliciesSubmitted($event)"
+    (goBack)="onGoBack()"
+    (policiesUpdated)="onPoliciesUpdated($event)">
+  </app-policies>
 
   </div>

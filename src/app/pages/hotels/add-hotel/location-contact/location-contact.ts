@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Hotel } from '../../../../core/models/hotel.model';
-import { Address } from '../../../../core/models/address.model'; // Import Address
+import { Address } from '../../../../core/models/hotel.model'; // Import Address
 
 @Component({
   selector: 'app-location-contact',

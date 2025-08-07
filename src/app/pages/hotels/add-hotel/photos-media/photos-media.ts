@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { take } from 'rxjs';
 
 interface ImagePreview {
-  url: string;
+  url: string; // This is a temporary data URL for the preview
   file: File;
   isPrimary: boolean;
 }
@@ -14,19 +15,20 @@ interface ImagePreview {
   templateUrl: './photos-media.html',
   styleUrls: ['./photos-media.css']
 })
-export class PhotosMediaComponent {
+export class PhotosMediaComponent implements OnInit {
   @Input() initialImages: string[] = [];
-  @Output() formSubmitted = new EventEmitter<{ images: string[], primaryImage: string | undefined }>();
+  @Output() formSubmitted = new EventEmitter<{ files: File[], primaryFile: File | undefined }>();
   @Output() goBack = new EventEmitter<void>();
+  @Output() imagesUpdated = new EventEmitter<{ images: string[], primaryImage?: string }>(); // <-- New Output
 
   imagePreviews: ImagePreview[] = [];
   isDragging = false;
 
-  constructor() {
+  ngOnInit(): void {
     this.imagePreviews = this.initialImages.map((url, index) => ({
       url,
-      file: new File([], url), // Placeholder for file
-      isPrimary: index === 0 // Assume the first image is primary
+      file: new File([], url), // Placeholder file
+      isPrimary: index === 0
     }));
   }
 
@@ -58,7 +60,7 @@ export class PhotosMediaComponent {
   private handleFiles(files: File[]): void {
     for (const file of files) {
       if (!file.type.startsWith('image/')) {
-        continue; // Skip non-image files
+        continue;
       }
 
       const reader = new FileReader();
@@ -68,6 +70,8 @@ export class PhotosMediaComponent {
           file: file,
           isPrimary: this.imagePreviews.length === 0
         });
+        // Also emit the updated state after adding a file
+        this.emitImagesUpdate();
       };
       reader.readAsDataURL(file);
     }
@@ -76,27 +80,31 @@ export class PhotosMediaComponent {
   removeImage(index: number): void {
     this.imagePreviews.splice(index, 1);
     if (this.imagePreviews.length > 0 && !this.imagePreviews.some(img => img.isPrimary)) {
-      this.imagePreviews[0].isPrimary = true; // Set a new primary if the old one was removed
+      this.imagePreviews[0].isPrimary = true;
     }
+    this.emitImagesUpdate(); // <-- Emit the update after removal
   }
 
   setPrimaryImage(index: number): void {
     this.imagePreviews.forEach((img, i) => img.isPrimary = i === index);
-    // Reorder the array to put the primary image first
     const primaryImage = this.imagePreviews.splice(index, 1)[0];
     this.imagePreviews.unshift(primaryImage);
+    this.emitImagesUpdate(); // <-- Emit the update after setting primary
   }
 
   onSubmit(): void {
-    // In a real application, you would upload these files to a server
-    // and get back the final image URLs.
-    // For this example, we'll simulate it by returning the local URLs.
-    const imageUrls = this.imagePreviews.map(img => img.url);
-    const primaryImage = this.imagePreviews.find(img => img.isPrimary)?.url;
-    this.formSubmitted.emit({ images: imageUrls, primaryImage });
+    const files = this.imagePreviews.map(p => p.file);
+    const primaryFile = this.imagePreviews.find(p => p.isPrimary)?.file;
+    this.formSubmitted.emit({ files, primaryFile });
   }
 
   onGoBack(): void {
     this.goBack.emit();
+  }
+
+  private emitImagesUpdate(): void {
+    const images = this.imagePreviews.map(p => p.url);
+    const primaryImage = this.imagePreviews.find(p => p.isPrimary)?.url;
+    this.imagesUpdated.emit({ images, primaryImage });
   }
 }

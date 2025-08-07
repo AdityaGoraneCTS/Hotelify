@@ -9,7 +9,7 @@
                     <b>Location</b>
                 </label>
                 <input type="text" class="form-control" formControlName="location" placeholder="Enter city or hotel"
-                    autocomplete="on" />
+                    autocomplete="off" />
                 <ul class="list-group position-absolute w-100 z-3"
                     *ngIf="filteredLocations.length && searchForm.get('location')?.value">
                     <li class="list-group-item list-group-item-action" *ngFor="let loc of filteredLocations"
