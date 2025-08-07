@@ -1,0 +1,130 @@
+.filter-container {
+  font-family: sans-serif;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.price-filter, .popular-filters {
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price-range-display {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track, .slider-progress {
+  position: absolute;
+  height: 5px;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-track {
+  background-color: #ddd;
+  z-index: 1;
+  width: 100%;
+}
+
+.slider-progress {
+  background-color: #007bff;
+  z-index: 2;
+}
+
+.price-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: transparent; /* Make default track transparent */
+  border-radius: 5px;
+  outline: none;
+  position: absolute;
+  pointer-events: none; /* Let events pass through to the thumb */
+}
+
+.price-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: all; /* Capture events on the thumb */
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 4; /* Ensure thumb is on top */
+}
+
+.filter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #555;
+}
+
+.filter-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-item input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.filter-item input[type="checkbox"]:checked::after {
+  content: '✔';
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.filter-count {
+  color: #999;
+}
