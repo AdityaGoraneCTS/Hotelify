@@ -1,7 +1,7 @@
 <div class="hotel-card">
   <div class="hotel-image-section">
     <img [src]="hotel.images[0]" alt="{{ hotel.name }}" (error)="imageError($event)" class="hotel-image">
-    </div>
+  </div>
 
   <div class="hotel-details-section">
     <div class="d-flex align-items-center mb-2">
@@ -10,7 +10,7 @@
       </h3>
       <span *ngIf="hotel.type" class="badge bg-secondary ms-2">{{ hotel.type }}</span>
     </div>
-    <p class="hotel-location">{{ hotel.location }}, {{ hotel.city }}</p>
+    <p class="hotel-location">{{ hotel.address.area }}, {{ hotel.address.city }}</p>
 
     <div class="hotel-features" *ngIf="hotel.features && hotel.features.length > 0">
       <span *ngFor="let feature of hotel.features" class="feature-badge">
@@ -26,7 +26,7 @@
       <p *ngIf="hotel.hasFreeBreakfast" class="meta-item free-breakfast">
         <i class="bi bi-cup-hot"></i> Free breakfast
       </p>
-      <p *ngIf="hotel.isPetFriendly" class="meta-item pet-friendly">
+      <p *ngIf="hotel.policies.petsAllowed" class="meta-item pet-friendly">
         <i class="bi bi-heart"></i> Pet friendly
       </p>
       <p *ngIf="hotel.reserveNowPayLater" class="meta-item reserve-later">
@@ -39,7 +39,8 @@
         <span>{{ hotel.rating | number:'1.1-1' }}</span>
       </div>
       <div class="rating-info">
-        <span class="rating-text" [ngClass]="{'rating-excellent': hotel.rating >= 8.5 && hotel.rating < 9.0, 'rating-exceptional': hotel.rating >= 9.0}">
+        <span class="rating-text"
+          [ngClass]="{'rating-excellent': hotel.rating >= 8.5 && hotel.rating < 9.0, 'rating-exceptional': hotel.rating >= 9.0}">
           {{ ratingText }}
         </span>
         <span class="reviews-count">{{ hotel.reviews }} reviews</span>
@@ -48,19 +49,22 @@
   </div>
 
   <div class="hotel-price-section">
-    <div *ngIf="hotel.discountPercentage" class="discount-label">
-      {{ hotel.discountPercentage }}% off
-    </div>
-    <div *ngIf="hotel.availabilityMessage" class="availability-alert">
-      {{ hotel.availabilityMessage }}
-    </div>
-    <div class="price-display">
-      <span *ngIf="hotel.originalPrice && hotel.originalPrice !== hotel.discountedPrice" class="original-price">
-        ₹{{ hotel.originalPrice | number:'1.0-0' }}
-      </span>
-      <span class="current-price">₹{{ hotel.discountedPrice | number:'1.0-0' }}</span>
-    </div>
-    <p class="total-price">₹{{ hotel.totalPriceIncludesTaxes | number:'1.0-0' }} total</p>
-    <p class="taxes-fees">includes taxes & fees</p>
+    <ng-container *ngIf="lowestPriceRoom">
+      <div *ngIf="lowestPriceRoom.discountPercentage" class="discount-label">
+        {{ lowestPriceRoom.discountPercentage }}% off
+      </div>
+      <div *ngIf="hotel.availabilityMessage" class="availability-alert">
+        {{ hotel.availabilityMessage }}
+      </div>
+      <div class="price-display">
+        <span *ngIf="lowestPriceRoom.originalPrice && lowestPriceRoom.originalPrice !== lowestPriceRoom.discountedPrice"
+          class="original-price">
+          ₹{{ lowestPriceRoom.originalPrice | number:'1.0-0' }}
+        </span>
+        <span class="current-price">₹{{ lowestPriceRoom.discountedPrice | number:'1.0-0' }}</span>
+      </div>
+      <p class="total-price">₹{{ lowestPriceRoom.totalPriceIncludesTaxes | number:'1.0-0' }} total</p>
+      <p class="taxes-fees">includes taxes & fees</p>
+    </ng-container>
   </div>
 </div>

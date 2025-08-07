@@ -135,3 +135,12 @@ ul.list-group {
         width: 50%;
     }
 } */
+
+
+/* search-bar.css */
+
+/* ... other styles ... */
+
+.location-dropdown {
+  z-index: 1050;
+}

@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
   <div class="container mt-5 aligned-banner-container">
     <div class="card offer-card-wide">
       <div class="card-body">
@@ -22,7 +21,8 @@
 
     <div #propertyScroll class="scroll-container d-flex gap-4" (scroll)="updatePropertyArrows()">
       <div *ngFor="let property of propertyCards" class="card text-white flex-shrink-0 card-snap-item mt-3"
-        style="width: 15rem; height: 19rem; cursor: pointer;" (click)="navigateToLocation(property.title)">
+        style="width: 15rem; height: 19rem; cursor: pointer;"
+        (click)="navigateToPropertyType(property.type || '')">
         <img [src]="property.image" class="card-img" alt="{{ property.title }}"
           style="height: 100%; object-fit: cover; object-position: center;">
         <div class="card-img-overlay d-flex flex-column justify-content-end image-overlay-gradient">
@@ -42,7 +42,8 @@
 
     <div #popularScroll class="scroll-container d-flex gap-4" (scroll)="updatePopularArrows()">
       <div *ngFor="let popular of cards" class="card flex-shrink-0 card-snap-item mt-3"
-        style="width: 15rem; height: 13rem; cursor: pointer;" (click)="navigateToLocation(popular.title)">
+        style="width: 15rem; height: 13rem; cursor: pointer;"
+        (click)="navigateToDestination(popular.title)">
         <img [src]="popular.image" class="card-img-top" alt="{{ popular.title }}">
         <div class="card-body">
           <h5 class="card-title">{{ popular.title }}</h5>
@@ -61,7 +62,8 @@
 
     <div #homesScroll class="scroll-container d-flex gap-4" (scroll)="updateHomesArrows()">
       <div *ngFor="let home of homesCards" class="card flex-shrink-0 card-snap-item mt-3"
-        style="width: 18rem; height: auto; cursor: pointer;" (click)="navigateToLocation(home.city)">
+        style="width: 18rem; height: auto; cursor: pointer;"
+        (click)="navigateToHotelDetails(home.id)">
         <img [src]="home.image" class="card-img-top" alt="{{ home.hotelName }}">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">
@@ -72,8 +74,7 @@
           <p class="card-text text-muted mb-2">{{ home.city }}</p>
           <div class="mt-auto">
             <p class="mb-0">
-              <span class="text-muted text-decoration-line-through">₹{{ home.originalPrice | number
-                  }}</span>
+              <span class="text-muted text-decoration-line-through">₹{{ home.originalPrice | number }}</span>
               <span class="fw-bold text-success ms-2">₹{{ home.offerPrice | number }}</span>
             </p>
           </div>
@@ -92,7 +93,8 @@
 
     <div #dealsScroll class="scroll-container d-flex gap-4" (scroll)="updateDealsArrows()">
       <div *ngFor="let deal of dealsCards" class="card flex-shrink-0 card-snap-item mt-3"
-        style="width: 18rem; height: auto; cursor: pointer;" (click)="navigateToLocation(deal.city)">
+        style="width: 18rem; height: auto; cursor: pointer;"
+        (click)="navigateToHotelDetails(deal.id)">
         <img [src]="deal.image" class="card-img-top" alt="{{ deal.hotelName }}">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">
@@ -103,8 +105,7 @@
           <p class="card-text text-muted mb-2">{{ deal.city }}</p>
           <div class="mt-auto">
             <p class="mb-0">
-              <span class="text-muted text-decoration-line-through">₹{{ deal.originalPrice | number
-                  }}</span>
+              <span class="text-muted text-decoration-line-through">₹{{ deal.originalPrice | number }}</span>
               <span class="fw-bold text-success ms-2">₹{{ deal.offerPrice | number }}</span>
             </p>
           </div>
