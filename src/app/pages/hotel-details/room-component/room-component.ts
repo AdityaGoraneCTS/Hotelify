@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Room } from '../../../core/models/hotel.model';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-room-component',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './room-component.html',
   styleUrl: './room-component.css'
 })
