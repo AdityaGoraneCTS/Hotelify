@@ -18,6 +18,11 @@ export class LoginPage {
   constructor(private authService: AuthService, private router: Router) {}
 
   login(): void {
+    if (!this.email || !this.password) {
+      // You can add validation logic here to show an error message
+      return;
+    }
+
     this.authService.login({ email: this.email, password: this.password }).subscribe(response => {
       if (response.success) {
         console.log('Login successful');
@@ -29,7 +34,17 @@ export class LoginPage {
     });
   }
 
+  // Method to handle forgot password redirection
+  forgotPassword(): void {
+    console.log('Redirecting to forgot password page...');
+    this.router.navigate(['/forgot-password']);
+  }
+
+  // Method to handle Google sign-in redirection
   signInWithGoogle(): void {
     console.log('Redirecting to Google OAuth...');
+    // This is where you would initiate the Google OAuth flow.
+    // For now, we will simply redirect to a placeholder page.
+    this.router.navigate(['/google-login']);
   }
 }
