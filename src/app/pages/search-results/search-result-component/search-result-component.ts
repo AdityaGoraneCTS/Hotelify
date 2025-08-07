@@ -1,3 +1,4 @@
+import { FilterComponent } from './../../../../../filter.component';
 // search-result-component.ts
 
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,7 @@ import { HotelCardComponent } from '../hotel-search-cards/hotel-search-cards';
 @Component({
   selector: 'app-search-result-component',
   standalone: true,
-  imports: [CommonModule, HotelCardComponent],
+  imports: [CommonModule, HotelCardComponent,FilterComponent],
   templateUrl: './search-result-component.html',
   styleUrl: './search-result-component.css'
 })
