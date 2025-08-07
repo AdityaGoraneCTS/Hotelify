@@ -1,6 +1,6 @@
 // src/app/core/services/auth-service.ts
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
 
 interface User {
@@ -11,14 +11,13 @@ interface User {
   email: string;
   phone: string;
   role: string;
-  password?: string; // Add password as optional for type safety
+  password?: string; 
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  // Use BehaviorSubject to manage the logged-in state and current user
   private _isLoggedIn = new BehaviorSubject<boolean>(false);
   isLoggedIn$: Observable<boolean> = this._isLoggedIn.asObservable();
 
@@ -29,7 +28,6 @@ export class AuthService {
     this.checkInitialAuthStatus();
   }
 
-  // Check localStorage on app start to see if a user is already logged in
   private checkInitialAuthStatus(): void {
     const userData = localStorage.getItem('currentUser');
     if (userData) {
@@ -46,7 +44,6 @@ export class AuthService {
     }
   }
 
-  // Handle user login
   login(credentials: any): Observable<any> {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const user = users.find(
@@ -54,15 +51,11 @@ export class AuthService {
     );
 
     if (user) {
-      // Simulate API call and delay
       return of({ success: true, user }).pipe(
         delay(500),
         tap((response) => {
-          // Destructure to remove the password before storing in localStorage
           const { password, ...userWithoutPassword } = response.user;
-          // Store the logged-in user in localStorage
           localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
-          // Update the observable states
           this._isLoggedIn.next(true);
           this._currentUser.next(userWithoutPassword);
         })
@@ -72,20 +65,17 @@ export class AuthService {
     }
   }
 
-  // Handle user logout
   logout(): void {
     this.clearAuthData();
     console.log('User logged out');
   }
 
-  // Clears all authentication-related data
   private clearAuthData(): void {
     localStorage.removeItem('currentUser');
     this._isLoggedIn.next(false);
     this._currentUser.next(null);
   }
 
-  // Handle user registration
   register(userData: User): Observable<any> {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const userExists = users.some((u: any) => u.email === userData.email);
@@ -93,10 +83,47 @@ export class AuthService {
     if (userExists) {
       return of({ success: false, message: 'User with this email already exists' }).pipe(delay(500));
     } else {
-      userData.id = Math.random().toString(36).substr(2, 9); // Simple unique ID
+      userData.id = Math.random().toString(36).substr(2, 9);
       users.push(userData);
       localStorage.setItem('users', JSON.stringify(users));
       return of({ success: true, message: 'Registration successful' }).pipe(delay(500));
+    }
+  }
+
+  // New method to update the user's profile
+  updateProfile(updatedUser: User): Observable<any> {
+    const users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+    const userIndex = users.findIndex(u => u.email === this._currentUser.value?.email);
+
+    if (userIndex > -1) {
+      // Preserve the password
+      const currentPassword = users[userIndex].password;
+      const updatedUserWithPassword = { ...updatedUser, password: currentPassword };
+      users[userIndex] = updatedUserWithPassword;
+      localStorage.setItem('users', JSON.stringify(users));
+
+      // Update currentUser observable and localStorage
+      const { password, ...userWithoutPassword } = updatedUserWithPassword;
+      this._currentUser.next(userWithoutPassword);
+      localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
+
+      return of({ success: true, message: 'Profile updated successfully' }).pipe(delay(500));
+    } else {
+      return throwError(() => new Error('User not found'));
+    }
+  }
+
+  // New method to change the user's password
+  changePassword(email: string, newPassword: string): Observable<any> {
+    const users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+    const userIndex = users.findIndex(u => u.email === email);
+
+    if (userIndex > -1) {
+      users[userIndex].password = newPassword;
+      localStorage.setItem('users', JSON.stringify(users));
+      return of({ success: true, message: 'Password changed successfully' }).pipe(delay(500));
+    } else {
+      return throwError(() => new Error('User not found'));
     }
   }
 }

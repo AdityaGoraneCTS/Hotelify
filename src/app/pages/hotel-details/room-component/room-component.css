@@ -11,14 +11,24 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Updated styling for the image container */
+.room-card .row > .col-md-4 {
+  display: flex;
+  align-items: stretch;
+}
+
 .room-image {
   width: 100%;
-  height: 250px;
+  height: 100%; /* Make the image fill the height of its container */
+  max-height: 100%;
   object-fit: cover;
 }
 
 .card-body {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow card body to grow and fill space */
 }
 
 .card-title {
@@ -29,6 +39,10 @@
 .card-text {
   font-size: 0.95rem;
   color: #777;
+}
+
+.room-amenities-list {
+  flex-grow: 1; /* Allow amenities list to push content down */
 }
 
 .room-amenities-list ul {

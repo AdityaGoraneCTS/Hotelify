@@ -13,16 +13,9 @@ export function passwordsMatchValidator(control: AbstractControl): ValidationErr
     return null;
   }
   
-  // Set the error on confirmPassword control if they don't match
-  if (password.value !== confirmPassword.value) {
-    confirmPassword.setErrors({ mismatch: true });
-    // This is important: return a group-level error
-    return { mismatch: true }; 
-  } else {
-    // If they match, clear the error
-    confirmPassword.setErrors(null);
-    return null;
-  }
+  const error = (password.value !== confirmPassword.value) ? { mismatch: true } : null;
+  confirmPassword.setErrors(error); // Set the error on confirmPassword control
+  return error; // Return group-level error
 }
 
 @Component({
@@ -45,17 +38,22 @@ export class RegistrationPage implements OnInit {
       lastName: this.fb.control('', { validators: [Validators.required], nonNullable: true }),
       email: this.fb.control('', { validators: [Validators.required, Validators.email], nonNullable: true }),
       phone: this.fb.control('', { validators: [Validators.required], nonNullable: true }),
-      // Updated password pattern to be simpler
-      password: this.fb.control('', { validators: [Validators.required, Validators.minLength(6)], nonNullable: true }),
+      password: this.fb.control('', {
+        validators: [
+          Validators.required,
+          // Corrected regular expression
+          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])(?=.{8,}).*$')
+        ], nonNullable: true
+      }),
       confirmPassword: this.fb.control('', { validators: [Validators.required], nonNullable: true }),
-      role: this.fb.control('', { validators: [Validators.required], nonNullable: true }),
-    }, { validators: passwordsMatchValidator }); // Use the custom validator here
+      role: this.fb.control('user', { validators: [Validators.required], nonNullable: true }), // Default to 'user'
+    }, { validators: passwordsMatchValidator });
   }
 
   onSubmit(): void {
+    this.registerForm.markAllAsTouched();
     if (this.registerForm.invalid) {
       this.formError = true;
-      this.registerForm.markAllAsTouched();
       return;
     }
 
