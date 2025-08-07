@@ -16,8 +16,6 @@ export const routes: Routes = [
     { path: 'register', component: RegistrationPage },
 
 
-    { path: 'hotel-details/:id', component: HotelDetailsComponent }, // New route
+    { path: 'hotel-details/:id', component: HotelDetailsComponent }, 
 
-
-    { path: 'hotel/:id', component: HotelDetailsComponent },
 ];
